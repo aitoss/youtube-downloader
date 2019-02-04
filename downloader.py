@@ -16,6 +16,7 @@ for ind, video in enumerate(video_list, 0):
     video_dict[ind] = {}
     video_dict[ind]['id'] = video_list[ind]['data-video-id']
     video_dict[ind]['title'] = video_list[ind]['data-title']
+
 url = "https://www.youtube.com/watch?v="
 
 def show_progress_bar(stream, chunk, file_handle, bytes_remaining):
@@ -41,7 +42,7 @@ for key, value in video_dict.items():
         yt.register_on_progress_callback(show_progress_bar)
         yt.streams.first().download()
         sys.stdout.write(" ]\n")
-    except ValueError:
+    except:
         sys.stdout.write("{} : Video not available.\n".format(video_dict[key]['title']))
 
 print("\nCompleted.\n")
