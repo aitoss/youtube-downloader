@@ -1,4 +1,4 @@
-# Youtube-Playlist-Downloader
+# Youtube-Downloader
 
 ## Install
 ------------
@@ -21,8 +21,14 @@ If not working then type the following command and try again.
 ------------
 
     $ youtube
-    $ Playlist URL : <Insert the public playlist url here>
+    $ URL : <Insert the url here>
+
+The tool has support for the following :
+1. Video Links
+2. Public Playlist Links
+3. Mix (Youtube Generated)
 
 **NOTE  - The playlist must be in public mode.
+**NOTE  - The Mix is randomised everytime so it may happen some videos might differ.
 
 >Have fun. Your contribution would be appreciated.
