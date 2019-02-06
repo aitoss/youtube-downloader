@@ -29,7 +29,9 @@ The tool has support for the following :
 3. Mix (Youtube Generated)
 
 **NOTE  - The playlist must be in public mode.
+
 **NOTE  - The Mix is randomised everytime so it may happen some videos might differ.
+
 
 >Have fun. Your contribution would be appreciated.
 
