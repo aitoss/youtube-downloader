@@ -1,21 +1,16 @@
 # Youtube-Playlist-Downloader
 
-Requirements
+## Requirements
 ------------
 
-You need Python 3.6.
+You need Python 3.6 or greater.
 
-    $ pip install -r requirements.txt --no-index --find-links file:///tmp/packages
+    $ pip install -r requirements.txt
 
 **NOTE  - The playlist must be in public mode.
 
-Execution
-------------
-
-    $ python3 downloader.py
-    $ Playlist URL : <Insert the public playlist url here>
     
-## INSTALL
+## Install
 	
 After installing you can launch application from terminal anywhere.
 
@@ -27,8 +22,12 @@ If not working then type the following command and try again.
 
 `source ~/.bashrc`
 
+## Execution
+------------
+
+    $ youtube
+    $ Playlist URL : <Insert the public playlist url here>
+
 >Have fun. Your contribution would be appreciated.
-
-
 
  
