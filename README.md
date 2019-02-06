@@ -8,14 +8,12 @@ You need Python 3.6 or greater.
 To install the tool just run the 'install' script.
 
 `sudo bash install`
+`source ~/.bashrc`
 
 After installing you can launch application from terminal anywhere.
 
 Type `youtube` on terminal.
 
-If not working then type the following command and try again.
-
-`source ~/.bashrc`    
 
 ## Execution
 ------------
