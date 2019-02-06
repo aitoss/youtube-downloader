@@ -66,7 +66,6 @@ def downloadVideo(id=None, title=None, url=None):
         yt = YouTube(base_url + id)
         sys.stdout.write("Downloading :: " + title + "\n[ ")
         yt.register_on_progress_callback(show_progress_bar)
-        yt.download_all()
         yt.streams.first().download()
         sys.stdout.write(" ]\n")
     elif url:
@@ -89,7 +88,7 @@ def download(get_url):
         elif choice == "2":
             get_url = get_url.split("&index")[0]
             downloadVideo(url=get_url)
-    elif "watch" in get_url and "start_radio" in get_url and "list" in get_url:
+    elif "watch" in get_url and ("list" in get_url or "start_radio" in get_url):
         choice = input("Entire Playlist [1] or Current Video [2] : ")
         if choice == "1":
             downloadAll(get_url, type="Mix")
