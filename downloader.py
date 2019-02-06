@@ -1,23 +1,11 @@
+import os
 import sys
 import requests
+import optparse
 from pytube import YouTube
 from bs4 import BeautifulSoup
+from requests.exceptions import MissingSchema
 
-get_url = input("Playlist Url : ")
-r = requests.get(get_url)
-content = r.content.decode("utf-8")
-soup = BeautifulSoup(content, "html.parser")
-
-video_list = soup.find_all("ul", {"id": "browse-items-primary"})[0]
-video_list = video_list.find_all("tbody", {"id": "pl-load-more-destination"})[0].find_all("tr", {"class": "pl-video yt-uix-tile "})
-video_dict = {}
-
-for ind, video in enumerate(video_list, 0):
-    video_dict[ind] = {}
-    video_dict[ind]['id'] = video_list[ind]['data-video-id']
-    video_dict[ind]['title'] = video_list[ind]['data-title']
-
-url = "https://www.youtube.com/watch?v="
 
 def show_progress_bar(stream, chunk, file_handle, bytes_remaining):
     global total_size, flag, batch_size, print_string
@@ -32,17 +20,111 @@ def show_progress_bar(stream, chunk, file_handle, bytes_remaining):
         batch_size = bytes_remaining
     return
 
-for key, value in video_dict.items():
-    try:
-        total_size = 0
-        flag = True
-        batch_size = 0
-        yt = YouTube(url + video_dict[key]['id'])
-        sys.stdout.write("Downloading :: " + video_dict[key]['title'] + "\n[ ")
+
+def downloadAll(get_url, type):
+
+    video_dict = {}
+
+    r = requests.get(get_url)
+    content = r.content.decode("utf-8")
+    soup = BeautifulSoup(content, "html.parser")
+
+    if type == "Playlist":
+
+        video_list = soup.find_all("ul", {"id": "browse-items-primary"})[0]
+        video_list = video_list.find_all("tbody", {"id": "pl-load-more-destination"})[0].find_all(
+            "tr", {"class": "pl-video yt-uix-tile "})
+        for ind, video in enumerate(video_list, 0):
+            video_dict[ind] = {}
+            video_dict[ind]['id'] = video_list[ind]['data-video-id']
+            video_dict[ind]['title'] = video_list[ind]['data-title']
+
+    elif type == "Mix":
+
+        video_list = soup.find_all("ol", {"class": "playlist-videos-list"})[0]
+        video_list = video_list.find_all("li", {"class": "vve-check"})
+        for ind, video in enumerate(video_list, 0):
+            video_dict[ind] = {}
+            video_dict[ind]['id'] = video_list[ind]['data-video-id']
+            video_dict[ind]['title'] = video_list[ind]['data-video-title']
+
+    for key, value in video_dict.items():
+        try:
+            downloadVideo(id=video_dict[key]['id'], title=video_dict[key]['title'])
+        except:
+            sys.stdout.write("{} : Video not available.\n".format(video_dict[key]['title']))
+
+
+def downloadVideo(id=None, title=None, url=None):
+    global base_url, total_size, flag, batch_size
+
+    total_size = 0
+    flag = True
+    batch_size = 0
+
+    if id and title:
+        yt = YouTube(base_url + id)
+        sys.stdout.write("Downloading :: " + title + "\n[ ")
+        yt.register_on_progress_callback(show_progress_bar)
+        yt.download_all()
+        yt.streams.first().download()
+        sys.stdout.write(" ]\n")
+    elif url:
+        r = requests.get(url)
+        soup = BeautifulSoup(r.content.decode("utf-8"), 'lxml')
+        title = soup.find_all("h1", {"class": "watch-title-container"})[0].find("span", {"class": "watch-title"})['title']
+        yt = YouTube(url)
+        sys.stdout.write("Downloading :: " + title + "\n[ ")
         yt.register_on_progress_callback(show_progress_bar)
         yt.streams.first().download()
         sys.stdout.write(" ]\n")
-    except:
-        sys.stdout.write("{} : Video not available.\n".format(video_dict[key]['title']))
 
-print("\nCompleted.\n")
+
+def download(get_url):
+
+    if "watch" in get_url and "index" in get_url and "list" in get_url:
+        choice = input("Entire Playlist [1] or Current Video [2] : ")
+        if choice == "1":
+            downloadAll(get_url, type="Mix")
+        elif choice == "2":
+            get_url = get_url.split("&index")[0]
+            downloadVideo(url=get_url)
+    elif "watch" in get_url and "start_radio" in get_url and "list" in get_url:
+        choice = input("Entire Playlist [1] or Current Video [2] : ")
+        if choice == "1":
+            downloadAll(get_url, type="Mix")
+        elif choice == "2":
+            get_url = get_url.split("&list")[0]
+            downloadVideo(url=get_url)
+    elif "playlist" in get_url:
+        downloadAll(get_url, type="Playlist")
+    else:
+        try:
+            downloadVideo(url=get_url)
+        except MissingSchema:
+            print("Invalid URL. Please Recheck.")
+            return
+
+
+if __name__ == "__main__":
+
+    parser = optparse.OptionParser()
+    parser.add_option('-d', '--dir', type="string", dest="dir",
+                      help="directory to which the videos are to be downloaded")
+
+    options, args = parser.parse_args()
+
+    if options.dir:
+        cwd = os.getcwd()
+        try:
+            os.chdir(options.dir)
+        except FileNotFoundError:
+            os.mkdir(options.dir)
+            os.chdir(options.dir)
+
+    base_url = "https://www.youtube.com/watch?v="
+    get_url = input("Url : ")
+
+    download(get_url)
+    os.chdir(cwd)
+    print("Downloaded.")
