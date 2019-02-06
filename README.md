@@ -11,6 +11,7 @@ You need Python 3.6 or greater.
 
     
 ## Install
+------------
 	
 After installing you can launch application from terminal anywhere.
 
@@ -29,5 +30,3 @@ If not working then type the following command and try again.
     $ Playlist URL : <Insert the public playlist url here>
 
 >Have fun. Your contribution would be appreciated.
-
- 
