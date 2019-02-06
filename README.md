@@ -8,6 +8,7 @@ You need Python 3.6 or greater.
 To install the tool just run the 'install' script.
 
 `sudo bash install`
+
 `source ~/.bashrc`
 
 After installing you can launch application from terminal anywhere.
