@@ -1,7 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8780367d-a3bb-4a6e-b355-0d40d5c61869" name="Default" comment="" />
+    <list default="true" id="8780367d-a3bb-4a6e-b355-0d40d5c61869" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/playlist1/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playlist1/Avril Lavigne - When Youre Gone (Officia Music Video).mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playlist1/Avril Lavigne - Wish You Were Here (Official Music Video).mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playlist1/Bommarillu Nammaka Thappani Full video song  HD    Hamaramovie.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playlist1/Bruno Mars - Just The Way You Are [OFFICIAL VIDEO].mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playlist1/Charlie Puth - We Dont Talk Anymore (feat Selena Gomez) [Official Video].mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playlist1/Christina Perri - A Thousand Years [Official Music Video].mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playlist1/Demi Lovato - Give Your Heart a Break (Official Video).mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playlist1/Ellie Goulding - Love Me Like You Do (Official Video).mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playlist1/Julia Michaels - Anxiety (Audio) ft Selena Gomez.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playlist1/Miley Cyrus - The Climb (Official Music Video) (HQ).mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playlist1/One Direction - Story of My Life (Official Video).mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playlist1/Race Gurram ᴴᴰ Video Songs  Sweety Song  Allu Arjun  Shruti Haasan  Saloni  Prakash Raj.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playlist1/Safe &amp; Sound feat The Civil Wars (The Hunger Games Songs From District 12 And Beyond).mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playlist1/Sofi de la Torre - Flex Your Way Out (ft Blackbear).mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playlist1/Subtact - Falling.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playlist1/Taylor Swift - 22.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playlist1/Taylor Swift - Begin Again.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playlist1/Taylor Swift - Blank Space.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playlist1/Taylor Swift - Call It What You Want (Lyric Video).mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playlist1/Taylor Swift - Everything Has Changed ft Ed Sheeran.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playlist1/Taylor Swift - Love Story.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playlist1/Taylor Swift - Mine.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playlist1/Taylor Swift - Red.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playlist1/Taylor Swift - Style.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playlist1/Taylor Swift - The Story Of Us.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playlist1/Taylor Swift - We Are Never Ever Getting Back Together.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playlist1/Taylor Swift - Wildest Dreams.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playlist1/Taylor Swift - You Belong With Me.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playlist1/ZAYN Taylor Swift - I Don’t Wanna Live Forever (Fifty Shades Darker).mp4" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,14 +44,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="downloader.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="downloader.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/downloader.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
-              <caret line="19" column="36" lean-forward="true" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+              <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="173">
+              <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
             </state>
           </provider>
         </entry>
@@ -30,6 +72,7 @@
       <find>url</find>
       <find>base_url</find>
       <find>download</find>
+      <find>.idea</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -39,6 +82,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/downloader.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -108,6 +152,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-11" width="1368" height="733" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24944155" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -134,6 +179,16 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/downloader.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="36" lean-forward="true" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/downloader.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="34" lean-forward="true" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
           <folding>
@@ -149,16 +204,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/playlist1/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/downloader.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
-          <caret line="19" column="36" lean-forward="true" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+          <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
         </state>
       </provider>
     </entry>
