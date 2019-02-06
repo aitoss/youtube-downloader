@@ -113,7 +113,7 @@ if __name__ == "__main__":
                       help="directory to which the videos are to be downloaded")
 
     options, args = parser.parse_args()
-
+    # cwd = ""
     if options.dir:
         cwd = os.getcwd()
         try:
@@ -126,5 +126,5 @@ if __name__ == "__main__":
     get_url = input("Url : ")
 
     download(get_url)
-    os.chdir(cwd)
+    # os.chdir(cwd)
     print("Downloaded.")
