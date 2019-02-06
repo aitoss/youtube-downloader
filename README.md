@@ -7,9 +7,10 @@ You need Python 3.6 or greater.
 
 To install the tool just run the 'install' script.
 
-`sudo bash install`
-
-`source ~/.bashrc`
+```
+sudo bash install
+source ~/.bashrc
+```
 
 After installing you can launch application from terminal anywhere.
 
@@ -31,3 +32,4 @@ The tool has support for the following :
 **NOTE  - The Mix is randomised everytime so it may happen some videos might differ.
 
 >Have fun. Your contribution would be appreciated.
+
