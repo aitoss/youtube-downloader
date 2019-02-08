@@ -10,13 +10,14 @@ from requests.exceptions import MissingSchema
 def show_progress_bar(stream, chunk, file_handle, bytes_remaining):
     global total_size, flag, batch_size, print_string
     toolbar_width = 20
+    percentage = batch_size/total_size
     if flag:
         total_size = bytes_remaining
         batch_size = total_size
         flag = False
-    if (batch_size - bytes_remaining) > total_size/toolbar_width:
+    if (batch_size - bytes_remaining) > (total_size/toolbar_width):
         sys.stdout.flush()
-        sys.stdout.write("#")
+        sys.stdout.write("▋"+percentage)
         batch_size = bytes_remaining
     return
 
