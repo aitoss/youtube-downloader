@@ -10,14 +10,14 @@ from requests.exceptions import MissingSchema
 def show_progress_bar(stream, chunk, file_handle, bytes_remaining):
     global total_size, flag, batch_size, print_string
     toolbar_width = 20
-    percentage = batch_size/total_size
+    #percentage = batch_size/total_size
     if flag:
         total_size = bytes_remaining
         batch_size = total_size
         flag = False
     if (batch_size - bytes_remaining) > (total_size/toolbar_width):
         sys.stdout.flush()
-        sys.stdout.write("▋"+percentage)
+        sys.stdout.write("▋")
         batch_size = bytes_remaining
     return
 
@@ -28,7 +28,7 @@ def downloadAll(get_url, type):
 
     r = requests.get(get_url)
     content = r.content.decode("utf-8")
-    soup = BeautifulSoup(content, "html.parser")
+    soup = BeautifulSoup(content, "xml")
 
     if type == "Playlist":
 
