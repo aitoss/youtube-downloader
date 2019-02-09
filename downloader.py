@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import os
 import sys
 import requests
@@ -107,24 +108,21 @@ def download(get_url):
 
 
 if __name__ == "__main__":
+    print(os.getcwd())
 
-    parser = optparse.OptionParser()
-    parser.add_option('-d', '--dir', type="string", dest="dir",
-                      help="directory to which the videos are to be downloaded")
+    path_of_downloaded_video=os.getenv("HOME")+"/Downloads/Youtube"
 
-    options, args = parser.parse_args()
-    # cwd = ""
-    if options.dir:
-        cwd = os.getcwd()
-        try:
-            os.chdir(options.dir)
-        except FileNotFoundError:
-            os.mkdir(options.dir)
-            os.chdir(options.dir)
+    if not os.path.exists(path_of_downloaded_video):
+        os.makedirs(path_of_downloaded_video)
+        
+    os.chdir(path_of_downloaded_video)
+
+    print(os.getcwd())
 
     base_url = "https://www.youtube.com/watch?v="
     get_url = input("Url : ")
 
     download(get_url)
-    # os.chdir(cwd)
-    print("Downloaded.")
+    
+    print("Downloaded Sucessfully.")
+    
