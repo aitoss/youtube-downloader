@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import os
 import sys
 import requests
@@ -10,13 +11,14 @@ from requests.exceptions import MissingSchema
 def show_progress_bar(stream, chunk, file_handle, bytes_remaining):
     global total_size, flag, batch_size, print_string
     toolbar_width = 20
+    #percentage = batch_size/total_size
     if flag:
         total_size = bytes_remaining
         batch_size = total_size
         flag = False
-    if (batch_size - bytes_remaining) > total_size/toolbar_width:
+    if (batch_size - bytes_remaining) > (total_size/toolbar_width):
         sys.stdout.flush()
-        sys.stdout.write("#")
+        sys.stdout.write("▋")
         batch_size = bytes_remaining
     return
 
@@ -27,7 +29,7 @@ def downloadAll(get_url, type):
 
     r = requests.get(get_url)
     content = r.content.decode("utf-8")
-    soup = BeautifulSoup(content, "html.parser")
+    soup = BeautifulSoup(content, "xml")
 
     if type == "Playlist":
 
@@ -106,24 +108,16 @@ def download(get_url):
 
 
 if __name__ == "__main__":
-
-    parser = optparse.OptionParser()
-    parser.add_option('-d', '--dir', type="string", dest="dir",
-                      help="directory to which the videos are to be downloaded")
-
-    options, args = parser.parse_args()
-    # cwd = ""
-    if options.dir:
-        cwd = os.getcwd()
-        try:
-            os.chdir(options.dir)
-        except FileNotFoundError:
-            os.mkdir(options.dir)
-            os.chdir(options.dir)
+    print(os.getcwd())
+    path_of_downloaded_video = os.getenv("HOME")+"/Downloads/Youtube"
+    if not os.path.exists(path_of_downloaded_video):
+        os.makedirs(path_of_downloaded_video)
+    os.chdir(path_of_downloaded_video)
+    print(os.getcwd())
 
     base_url = "https://www.youtube.com/watch?v="
     get_url = input("Url : ")
 
     download(get_url)
-    # os.chdir(cwd)
-    print("Downloaded.")
+    
+    print("Downloaded Successfully.")

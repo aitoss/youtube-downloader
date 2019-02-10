@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 echo "Run this command as sudo.";
 sudo pip3 install -r requirements.txt;
-sudo cp downloader.py /usr/bin/;
-sudo chmod 777 /usr/bin/downloader.py;
-sudo echo "alias youtube='python3 /usr/bin/downloader.py'" >> ~/.bashrc;
-source ~/.bashrc;
+sudo cp downloader.py /usr/bin/youtube;
+sudo chmod 755 /usr/bin/youtube;
 echo "#####################################################";
-echo "Youtube Playlist Downloader successfully installed";
+echo "Youtube Video Downloader successfully installed";
 echo "type 'youtube' from anywhere in terminal to launch the application";
