@@ -109,14 +109,10 @@ def download(get_url):
 
 if __name__ == "__main__":
     print(os.getcwd())
-
-    path_of_downloaded_video=os.getenv("HOME")+"/Downloads/Youtube"
-
+    path_of_downloaded_video = os.getenv("HOME")+"/Downloads/Youtube"
     if not os.path.exists(path_of_downloaded_video):
         os.makedirs(path_of_downloaded_video)
-        
     os.chdir(path_of_downloaded_video)
-
     print(os.getcwd())
 
     base_url = "https://www.youtube.com/watch?v="
@@ -124,5 +120,4 @@ if __name__ == "__main__":
 
     download(get_url)
     
-    print("Downloaded Sucessfully.")
-    
+    print("Downloaded Successfully.")
