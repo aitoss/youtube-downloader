@@ -116,7 +116,14 @@ if __name__ == "__main__":
     print(os.getcwd())
 
     base_url = "https://www.youtube.com/watch?v="
-    get_url = input("Url : ")
+
+    if len(sys.argv)==1:
+        get_url = input("Url : ")
+    elif len(sys.argv)>2:
+        print("Too Many Arguments!!")
+        get_url = input("Enter Url : ")
+    else:
+        get_url = sys.argv[1]
 
     download(get_url)
     

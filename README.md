@@ -20,6 +20,10 @@ Type `youtube` on terminal.
 ## Execution
 ------------
 
+    $ youtube <Insert the URL here>
+
+                    OR
+
     $ youtube
     $ URL : <Insert the url here>
 
